@@ -13,6 +13,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
@@ -50,32 +51,32 @@
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonDivision" Content="/"
+        <Button x:Name="buttonDivision" Content="/" Click="ButtonDivision_Click"
                 Grid.Row="1"
                 Grid.Column="3"
                 Margin="5"
                 FontSize="20"/>
         
         <!--Colonna 2-->
-        <Button x:Name="buttonSeven" Content="7"
+        <Button x:Name="buttonSeven" Content="7" Click="ButtonSeven_Click"
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonEight" Content="8"
+        <Button x:Name="buttonEight" Content="8" Click="ButtonEight_Click"
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="5"
                 FontSize="20"/>
         
-        <Button x:Name="buttonNine" Content="9"
+        <Button x:Name="buttonNine" Content="9" Click="ButtonNine_Click"
                 Grid.Row="2"
                 Grid.Column="2"
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonTimes" Content="*"
+        <Button x:Name="buttonTimes" Content="*" Click="ButtonTimes_Click"
                 Grid.Row="2"
                 Grid.Column="3"
                 Margin="5"
@@ -83,25 +84,25 @@
         
         <!--Colonna 3-->
 
-        <Button x:Name="buttonFour" Content="4"
+        <Button x:Name="buttonFour" Content="4" Click="ButtonFour_Click"
                 Grid.Row="3"
                 Grid.Column="0"
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonFive" Content="5"
+        <Button x:Name="buttonFive" Content="5" Click="ButtonFive_Click"
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonSix" Content="6"
+        <Button x:Name="buttonSix" Content="6" Click="ButtonSix_Click"
                 Grid.Row="3"
                 Grid.Column="2"
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonMinus" Content="-"
+        <Button x:Name="buttonMinus" Content="-" Click="ButtonMinus_Click"
                 Grid.Row="3"
                 Grid.Column="3"
                 Margin="5"
@@ -109,25 +110,25 @@
         
         <!--Colonna 4-->
 
-        <Button x:Name="buttonOne" Content="1"
+        <Button x:Name="buttonOne" Content="1" Click="ButtonOne_Click"
                 Grid.Row="4"
                 Grid.Column="0"
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonTwo" Content="2"
+        <Button x:Name="buttonTwo" Content="2" Click="ButtonTwo_Click"
                 Grid.Row="4"
                 Grid.Column="1"
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonThree" Content="3"
+        <Button x:Name="buttonThree" Content="3" Click="ButtonThree_Click"
                 Grid.Row="4"
                 Grid.Column="2"
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonPlus" Content="+"
+        <Button x:Name="buttonPlus" Content="+" Click="ButtonPlus_Click"
                 Grid.Row="4"
                 Grid.Column="3"
                 Margin="5"
@@ -135,13 +136,13 @@
         
         <!--Colonna 5-->
 
-        <Button x:Name="buttonZero" Content="0"
+        <Button x:Name="buttonZero" Content="0" Click="ButtonZero_Click"
                 Grid.Row="5"
                 Grid.ColumnSpan="2"
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonDot" Content="."
+        <Button x:Name="buttonDot" Content="." Click="ButtonDot_Click"
                 Grid.Row="5"
                 Grid.Column="2"
                 Margin="5"
