@@ -51,7 +51,7 @@
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonDivision" Content="/" Click="ButtonDivision_Click"
+        <Button x:Name="buttonDivision" Content="/" Click="OperationButton_Event"
                 Grid.Row="1"
                 Grid.Column="3"
                 Margin="5"
@@ -76,7 +76,7 @@
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonTimes" Content="*" Click="ButtonTimes_Click"
+        <Button x:Name="buttonTimes" Content="*" Click="OperationButton_Event"
                 Grid.Row="2"
                 Grid.Column="3"
                 Margin="5"
@@ -102,7 +102,7 @@
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonMinus" Content="-" Click="ButtonMinus_Click"
+        <Button x:Name="buttonMinus" Content="-" Click="OperationButton_Event"
                 Grid.Row="3"
                 Grid.Column="3"
                 Margin="5"
@@ -128,7 +128,7 @@
                 Margin="5"
                 FontSize="20"/>
 
-        <Button x:Name="buttonPlus" Content="+" Click="ButtonPlus_Click"
+        <Button x:Name="buttonPlus" Content="+" Click="OperationButton_Event"
                 Grid.Row="4"
                 Grid.Column="3"
                 Margin="5"

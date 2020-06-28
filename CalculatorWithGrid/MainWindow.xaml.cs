@@ -21,6 +21,7 @@ namespace CalculatorWithGrid
     public partial class MainWindow : Window
     {
         double lastNumber, result;
+        SelectedOperator operatreSelezionato;
 
         public MainWindow()
         {
@@ -36,7 +37,31 @@ namespace CalculatorWithGrid
 
         private void ButtonEqual_Click(object sender, RoutedEventArgs e)
         {
-            
+            double nuovoNumero;
+            if (double.TryParse(resultLabel.Content.ToString(), out nuovoNumero))
+            {
+                switch(operatreSelezionato)
+                {
+                    case SelectedOperator.Addizione:
+                        result = MathClass.Add(lastNumber, nuovoNumero);
+                        break;
+
+                    case SelectedOperator.Sottrazione:
+                        result = MathClass.Sustraction(lastNumber, nuovoNumero);
+                        break;
+
+                    case SelectedOperator.Divisione:
+                        result = MathClass.Divide(lastNumber, nuovoNumero);
+                        break;
+
+                    case SelectedOperator.Moltiplicazione:
+                        result = MathClass.Multiply(lastNumber, nuovoNumero);
+                        break;
+                }
+
+                resultLabel.Content = result.ToString();
+            }
+
         }
 
         private void ButtonPercentage_Click(object sender, RoutedEventArgs e)
@@ -66,6 +91,30 @@ namespace CalculatorWithGrid
         private void ButtonDivision_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        /*
+         * E' possibile creare un evento unico per tutti i bottoni
+         * 
+         * */
+        private void OperationButton_Event(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(resultLabel.Content.ToString(),out lastNumber))
+            {
+                resultLabel.Content = "0";
+            }
+
+            if(sender == buttonPlus)
+                operatreSelezionato = SelectedOperator.Addizione;
+
+            if (sender == buttonDivision)
+                operatreSelezionato = SelectedOperator.Divisione;
+
+            if (sender == buttonMinus)
+                operatreSelezionato = SelectedOperator.Sottrazione;
+
+            if (sender == buttonTimes)
+                operatreSelezionato = SelectedOperator.Moltiplicazione;
         }
 
         private void ButtonSeven_Click(object sender, RoutedEventArgs e)
@@ -205,7 +254,53 @@ namespace CalculatorWithGrid
 
         private void ButtonDot_Click(object sender, RoutedEventArgs e)
         {
+            if(resultLabel.Content.ToString().Contains("."))
+            {
+                // Non fare nulla
+            }
+            else
+            {
+                resultLabel.Content = $"{resultLabel.Content}.";
+            }
+        }
+    }
 
+    public enum SelectedOperator
+    {
+        Addizione,
+        Sottrazione,
+        Moltiplicazione,
+        Divisione
+    }
+
+    // Semplica classe per esegure le operazioni di base (può essere sostituita con Sytem.Math)
+
+    public class MathClass
+    {
+        public static double Add(double n1, double n2)
+        {
+            return n1 + n2;
+        }
+
+        public static double Sustraction(double n1, double n2)
+        {
+            return n1 - n2;
+        }
+
+        public static double Multiply(double n1, double n2)
+        {
+            return n1 * n2;
+        }
+
+        public static double Divide(double n1, double n2)
+        {
+            if (n2 == 0)
+            {
+                MessageBox.Show("Attenzione: \n la divisione per zero non è supportata.", "Attenzione", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return 0;
+            }
+            // puoi evitare l'else perchè l' if statment sopra restituisce 0
+            return n1 / n2;
         }
     }
 }
